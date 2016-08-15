@@ -17,7 +17,7 @@ import javax.persistence.ManyToMany;
 public class Volunteer extends User{
 	
 
-	@ManyToMany(cascade=CascadeType.ALL, mappedBy="volunteers")
+	@ManyToMany(mappedBy="volunteers")
 	private List<Task> tasks;
 
 	public Volunteer() {
