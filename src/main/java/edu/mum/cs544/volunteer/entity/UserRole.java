@@ -1,7 +1,7 @@
 /**
  * 
  */
-package edu.mum.cs544.volunteer;
+package edu.mum.cs544.volunteer.entity;
 
 /**
  * @author Ivan
