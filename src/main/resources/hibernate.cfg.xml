@@ -28,9 +28,12 @@
 		<property name="current_session_context_class">thread</property>
 		
 		<!-- List of mapping classes -->
-		<mapping class="edu.mum.cs544.hibernate_demo2.model.Student" />
-		<mapping class="edu.mum.cs544.hibernate_demo2.model.Employee" />
-		<mapping class="edu.mum.cs544.hibernate_demo2.model.Account" />
+		<mapping class="edu.mum.cs544.volunteer.entity.Volunteer" />
+		<mapping class="edu.mum.cs544.volunteer.entity.Resource" />
+		<mapping class="edu.mum.cs544.volunteer.entity.Administrator" />
+		<mapping class="edu.mum.cs544.volunteer.entity.User" />
+		<mapping class="edu.mum.cs544.volunteer.entity.Task" />
+		<mapping class="edu.mum.cs544.volunteer.entity.Project" />
 		
  
     </session-factory>

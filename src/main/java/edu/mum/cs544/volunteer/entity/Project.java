@@ -35,6 +35,27 @@ public class Project {
 	private String description;
 	@OneToOne
 	private Administrator administrator;
+
+
+	@Temporal(TemporalType.DATE)
+	private Date startDate;
+	
+	@Temporal(TemporalType.DATE)
+	private Date endDate;
+
+	
+	@Lob
+	private byte[] picture;
+	
+	@OneToMany(mappedBy="project")
+	private List<Task> tasks;
+	
+	@ElementCollection
+	private List<String> beneficiaries;
+	
+	@Enumerated
+	private Status status;
+	
 	
 	public Date getStartDate() {
 		return startDate;
@@ -51,26 +72,6 @@ public class Project {
 	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
 	}
-
-	@Temporal(TemporalType.DATE)
-	private Date startDate;
-	
-	@Temporal(TemporalType.DATE)
-	private Date endDate;
-
-	
-	@Lob
-	private byte[] picture;
-	
-	@OneToMany
-	@JoinColumn(name="id")
-	private List<Task> tasks;
-	
-	@ElementCollection
-	private List<String> beneficiaries;
-	
-	@Enumerated
-	private Status status;
 	public Status getStatus() {
 		return status;
 	}
@@ -108,7 +109,8 @@ public class Project {
 	public void setName(String name) {
 		this.name = name;
 	}
-
+	
+	
 	public String getDescription() {
 		return description;
 	}

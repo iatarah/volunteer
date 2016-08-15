@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -28,6 +29,10 @@ public class Task {
 	private String taskId;
 	private String name;
 	private String description;
+	
+	@ManyToOne
+	@JoinColumn(name="projectId")
+	private Project project;
 	
 	@Temporal(TemporalType.DATE)
 	private Date startDate;
@@ -47,6 +52,27 @@ public class Task {
 	public Task() {
 		super();
 	}
+	
+
+	public Project getProject() {
+		return project;
+	}
+
+
+	public void setProject(Project project) {
+		this.project = project;
+	}
+
+
+	public List<Volunteer> getVolunteers() {
+		return volunteers;
+	}
+
+
+	public void setVolunteers(List<Volunteer> volunteers) {
+		this.volunteers = volunteers;
+	}
+
 
 	public int getId() {
 		return id;
