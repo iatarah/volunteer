@@ -41,8 +41,7 @@ public class Task {
 	@OneToMany
 	private List<Resource> resources;
 	
-	@ManyToMany(cascade=CascadeType.ALL)  
-    @JoinTable(name="userId", joinColumns=@JoinColumn(name="taskId"), inverseJoinColumns=@JoinColumn(name="userId")) 
+	@ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
 	private List<Volunteer> volunteers;
 
 	public Task() {
